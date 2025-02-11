@@ -3,39 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
     <title>My Weather App</title>
-    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <form action="">
-        <input type="text" placeholder="Enter a city" required />
-        <input type="submit" value="search" />
-      </form>
-    </header>
-    <main>
-      <h1>Paris</h1>
-      <div>
-        <p>
-          Monday 0:24, clear sky <br />
-          Humidity: 90%, Wind: 3.6km/h
-        </p>
-      </div>
-      <div>🌤12°C</div>
-    </main>
-    <footer>
-      This App is coded by
-      <a href="https://github.com/Manpreet-star" target="_blank"
-        >Manpreet Kaur</a
-      >, code hosted on
-      <a
-        href="https://github.com/Manpreet-star/My-Weather-App-Project"
-        target="_blank"
-        >GitHub</a
-      >
-      and website hosted on
-      <a href="https://manpreet-kaur.netlify.app/" target="_blank">netlify</a>
-    </footer>
-    <script src="index.js"></script>
+    <div class="container">
+      <header>
+        <form action="">
+          <input type="text" placeholder="Enter a city" required />
+          <input type="submit" value="search" />
+        </form>
+      </header>
+      <main>
+        <h1>Paris</h1>
+        <div>
+          <p>
+            Monday 0:24, clear sky <br />
+            Humidity: 90%, Wind: 3.6km/h
+          </p>
+        </div>
+        <div>🌤12°C</div>
+      </main>
+      <footer>
+        This App is coded by
+        <a href="https://github.com/Manpreet-star" target="_blank"
+          >Manpreet Kaur</a
+        >, code hosted on
+        <a
+          href="https://github.com/Manpreet-star/My-Weather-App-Project"
+          target="_blank"
+          >GitHub</a
+        >
+        and website hosted on
+        <a href="https://manpreet-kaur.netlify.app/" target="_blank">netlify</a>
+      </footer>
+      <script src="index.js"></script>
+    </div>
   </body>
 </html>
