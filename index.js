@@ -1,8 +1,18 @@
 function refreshTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let temperature = response.data.temperature.current;
-
   temperatureElement.innerHTML = Math.round(temperature);
+
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = response.data.condition.description;
+
+  let humidityElement = document.querySelector("#humidity");
+
+  humidityElement.innerHTML = response.data.temperature.humidity;
+
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = response.data.wind.speed;
+  console.log(response.data.wind);
 }
 
 function searchCity(city) {
@@ -21,3 +31,4 @@ function handleSearchCity(event) {
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchCity);
+searchCity("Paris");
