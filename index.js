@@ -15,7 +15,8 @@ function refreshTemperature(response) {
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = `${response.data.wind.speed}km/h`;
 
-  let date = new Date(response.data.time * 1000);
+  let timestamp = response.data.time * 1000;
+  let date = new Date(timestamp);
   let timeElement = document.querySelector("#time");
   timeElement.innerHTML = formatDate(date);
 
@@ -38,7 +39,7 @@ function formatDate(date) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-  if (minutes < 0) {
+  if (minutes < 10) {
     minutes = `0${minutes}`;
   }
 
@@ -47,7 +48,7 @@ function formatDate(date) {
 
 function searchCity(city) {
   let apiKey = "30fe3f451218oete066ecab716f46558";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(refreshTemperature);
 }
 
