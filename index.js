@@ -62,24 +62,26 @@ searchFormElement.addEventListener("submit", handleSearchCity);
 
 function getForecast(city) {
   let apiKey = "30fe3f451218oete066ecab716f46558";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=38.71667&lon=-9.13333&key=30fe3f451218oete066ecab716f46558&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
-function displayForecast() {
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+function displayForecast(response) {
+  console.log(response.data);
   let forecastHtml = "";
-  days.forEach(function (day) {
+  response.data.daily.forEach(function (day) {
     forecastHtml =
       forecastHtml +
       `<div class="weather-forecast-day">
-            <div class="weather-forecast-date">${day}</div>
+            <div class="weather-forecast-date">Tue</div>
             <div class="weather-forecast-icon">☀</div>
             <div class="weather-forecast-temperatures">
               <div class="weather-forecast-temperature">
-                <strong>15°</strong>
+                <strong>${Math.round(day.temperature.maximum)}°</strong>
               </div>
-              <div class="weather-forecast-temperature">9°</div>
+              <div class="weather-forecast-temperature">${Math.round(
+                day.temperature.minimum
+              )}°</div>
             </div>
           </div>`;
   });
